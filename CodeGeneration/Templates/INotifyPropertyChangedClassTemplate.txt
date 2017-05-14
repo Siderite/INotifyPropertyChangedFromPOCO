@@ -1,0 +1,18 @@
+﻿public class {className} : {baseClassName},INotifyPropertyChanged
+{
+
+  {constructors}
+
+  public event PropertyChangedEventHandler PropertyChanged;
+
+  {properties}
+
+  private void OnPropertyChanged(string propertyName)
+  {
+    var handler=PropertyChanged;
+    if (handler != null)
+    {
+      handler(this, new PropertyChangedEventArgs(propertyName));
+    }
+  }
+}

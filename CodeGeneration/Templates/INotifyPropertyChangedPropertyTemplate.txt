@@ -1,0 +1,11 @@
+﻿public override {propertyType} {propertyName}
+{
+  get { return base.{propertyName}; }
+  set {
+    if (!Equals(value,base.{propertyName})) {
+      base.{propertyName}=value;
+      OnPropertyChanged("{propertyName}");
+	  {dependencies OnPropertyChanged}
+    }
+  }
+}
